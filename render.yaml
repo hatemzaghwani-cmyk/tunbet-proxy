@@ -1,8 +1,12 @@
 services:
   - type: web
-    name: tunbet-proxy
-    runtime: node
+    name: forzza-proxy
+    env: node
     plan: free
-    buildCommand: ""
-    startCommand: node server.js
-    envVars: []
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+
